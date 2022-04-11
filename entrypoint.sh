@@ -8,9 +8,9 @@ cd ${INPUT_DBT_PROJECT_FOLDER}
 if [ -n "${SNOWFLAKE_USERNAME}" ] && [ -n "${SNOWFLAKE_PASSWORD}" ]
 then
  echo trying to use user/password
- sed -i "s/SNOWFLAKE_USERNAME/${SNOWFLAKE_USERNAME}/g" ./profiles.yml
- sed -i "s/SNOWFLAKE_PASSWORD/${SNOWFLAKE_PASSWORD}/g" ./profiles.yml
- sed -i "s/SNOWFLAKE_ACCOUNT/${SNOWFLAKE_ACCOUNT}/g" ./profiles.yml
+ sed -i "s/SNOWFLAKE_USERNAME/${SNOWFLAKE_USERNAME}/g" ${INPUT_DBT_PROFILES_FOLDER}/profiles.yml
+ sed -i "s/SNOWFLAKE_PASSWORD/${SNOWFLAKE_PASSWORD}/g" ${INPUT_DBT_PROFILES_FOLDER}/profiles.yml
+ sed -i "s/SNOWFLAKE_ACCOUNT/${SNOWFLAKE_ACCOUNT}/g" ${INPUT_DBT_PROFILES_FOLDER}/profiles.yml
 else
   echo no tokens or credentials supplied
 fi
