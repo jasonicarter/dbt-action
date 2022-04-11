@@ -15,6 +15,10 @@ inputs:
     description: "dbt profiles folder. Defaults to ."
     default: "."
     required: false
+  dbt_pr_schema:
+    description: "dbt unique schema name."
+    default: ".GITHUB_ACTION_PR_0000"
+    required: true
 outputs:
   result:
     description: "Success or failure of the dbt command"
