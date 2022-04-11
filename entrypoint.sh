@@ -11,6 +11,11 @@ then
  sed -i "s/SNOWFLAKE_USERNAME/${SNOWFLAKE_USERNAME}/g" ${INPUT_DBT_PROFILES_FOLDER}/profiles.yml
  sed -i "s/SNOWFLAKE_PASSWORD/${SNOWFLAKE_PASSWORD}/g" ${INPUT_DBT_PROFILES_FOLDER}/profiles.yml
  sed -i "s/SNOWFLAKE_ACCOUNT/${SNOWFLAKE_ACCOUNT}/g" ${INPUT_DBT_PROFILES_FOLDER}/profiles.yml
+ 
+ echo "::set-output name=sha_short::$(git rev-parse --short ${{ github.event.pull_request.head.sha }})" >> $COMMIT_SHORT_SHA
+ echo ${{ github.event.pull_request.number }} >> $PR_NUMBER
+
+ sed -i "s/SNOWFLAKE_SCHEMA/GITHUB_ACTION_${PR_NUMBER}_${COMMIT_SHORT_SHA}/g" ${INPUT_DBT_PROFILES_FOLDER}/profiles.yml
 else
   echo no tokens or credentials supplied
 fi
