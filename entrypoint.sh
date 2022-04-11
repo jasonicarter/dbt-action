@@ -11,7 +11,7 @@ then
  sed -i "s/SNOWFLAKE_USERNAME/${SNOWFLAKE_USERNAME}/g" ${INPUT_DBT_PROFILES_FOLDER}/profiles.yml
  sed -i "s/SNOWFLAKE_PASSWORD/${SNOWFLAKE_PASSWORD}/g" ${INPUT_DBT_PROFILES_FOLDER}/profiles.yml
  sed -i "s/SNOWFLAKE_ACCOUNT/${SNOWFLAKE_ACCOUNT}/g" ${INPUT_DBT_PROFILES_FOLDER}/profiles.yml
- sed -i "s/SNOWFLAKE_SCHEMA/${INPUT_DBT_PR_SCHEMA}}/g" ${INPUT_DBT_PROFILES_FOLDER}/profiles.yml
+ sed -i "s/SNOWFLAKE_SCHEMA/${INPUT_DBT_PR_SCHEMA}/g" ${INPUT_DBT_PROFILES_FOLDER}/profiles.yml
 else
   echo no tokens or credentials supplied
 fi
