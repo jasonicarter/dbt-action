@@ -17,7 +17,7 @@ inputs:
     required: false
   dbt_pr_schema:
     description: "dbt unique schema name."
-    default: ".GITHUB_ACTION_PR_0000"
+    default: "GITHUB_ACTION_PR_0000"
     required: true
 outputs:
   result:
