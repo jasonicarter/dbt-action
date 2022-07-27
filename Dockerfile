@@ -1,7 +1,7 @@
 FROM python:3.9-slim
 RUN apt-get update && apt-get install --no-install-recommends -y
 
-RUN pip install --no-cache-dir --upgrade pip "dbt-snowflake>=1.0,<1.1"
+RUN pip install --no-cache-dir --upgrade pip "dbt-snowflake==1.1"
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT [ "/entrypoint.sh" ]
